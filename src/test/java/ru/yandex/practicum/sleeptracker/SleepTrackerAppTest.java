@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SleepTrackerAppTest {
 	@Test
-	public void BadQualitySleepingSessionValueTest() {// Создаем список сессий сна с разными качествами
+	public void badQualitySleepingSessionValueTest() {
 
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
@@ -29,7 +29,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void BadQualitySleepingSessionValueWithoutBADTest() {
+	public void badQualitySleepingSessionValueWithoutBADTest() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 7, 30), SleepQuality.GOOD));
@@ -46,7 +46,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void MaxDurationSleepingSessionTest() {
+	public void maxDurationSleepingSessionTest() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -58,7 +58,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void MaxDurationSleepingSessionTestWithEqualsDurationsTest() {
+	public void maxDurationSleepingSessionTestWithEqualsDurationsTest() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -72,7 +72,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void MinDurationSleepingSessionTest() {
+	public void minDurationSleepingSessionTest() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -86,7 +86,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void MinDurationSleepingSessionTestWithEqualsDuration() {
+	public void minDurationSleepingSessionTestWithEqualsDuration() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -100,7 +100,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void MediumDurationSleepingSessionTest() {
+	public void mediumDurationSleepingSessionTest() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -114,7 +114,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void MediumDurationSleepingSessionTestWithDoubleResult() {
+	public void mediumDurationSleepingSessionTestWithDoubleResult() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 30),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -141,7 +141,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void SleeplessNightAnalyzerTestWithOneSleeplessNight() {
+	public void sleeplessNightAnalyzerTestWithOneSleeplessNight() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 7, 30), SleepQuality.GOOD));
@@ -158,7 +158,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void SleeplessNightAnalyzerTestMonthEnd() {
+	public void sleeplessNightAnalyzerTestMonthEnd() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 7, 30), SleepQuality.GOOD));
@@ -175,7 +175,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void SleeplessNightAnalyzerTestBoundaryValues() {
+	public void sleeplessNightAnalyzerTestBoundaryValues() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 2, 0),
 				LocalDateTime.of(2025, 10, 1, 5, 30), SleepQuality.GOOD));
@@ -192,7 +192,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void SleepSessionsPerPeriodTest() {
+	public void sleepSessionsPerPeriodTest() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 22, 0),
 				LocalDateTime.of(2025, 10, 2, 8, 0), SleepQuality.GOOD));
@@ -206,7 +206,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void UserClassificationTestJavoronok() {
+	public void userClassificationTestJavoronok() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 21, 59),
 				LocalDateTime.of(2025, 10, 2, 6, 59), SleepQuality.GOOD));//Javoronok
@@ -220,7 +220,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void UserClassificationTestSova() {
+	public void userClassificationTestSova() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 21, 59),
 				LocalDateTime.of(2025, 10, 2, 6, 59), SleepQuality.GOOD));//Javoronok
@@ -234,7 +234,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void UserClassificationTestGolub() {
+	public void userClassificationTestGolub() { 
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 21, 59),
 				LocalDateTime.of(2025, 10, 2, 6, 59), SleepQuality.GOOD));//Javoronok
