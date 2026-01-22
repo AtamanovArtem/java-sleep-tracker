@@ -11,11 +11,11 @@ public class LogFileReader {
 	public String fileName;
 
 
-	public LogFileReader(String fileName) {
+	protected LogFileReader(String fileName) {
 		this.fileName = fileName;
 	}
 
-	public static List<SleepingSession> readLogFile(String fileName) {
+	protected static List<SleepingSession> readLogFile(String fileName) {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 
 		try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {

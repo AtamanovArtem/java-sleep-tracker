@@ -26,7 +26,14 @@ public class SleeplessNightAnalyzer implements Function<List<SleepingSession>, S
 				.anyMatch(session -> {
 					LocalDateTime start = session.startTime;
 					LocalDateTime end = session.finishTime;
-					return (start.getHour() < 6 && end.getHour() >= 6) || (start.getHour() <= 6 && end.getHour() > 6);
+
+					if (start.toLocalDate().equals(end.toLocalDate())) {
+						return start.isBefore(start.toLocalDate().atTime(6, 0)) && end.isAfter(
+								start.toLocalDate().atTime(0, 0));
+					} else {
+						return (start.isBefore(start.toLocalDate().plusDays(1).atTime(6, 0)) &&
+								end.isAfter(start.toLocalDate().atTime(0, 0)));
+					}
 				});
 	}
 }

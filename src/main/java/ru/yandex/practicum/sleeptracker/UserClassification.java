@@ -1,6 +1,7 @@
 package ru.yandex.practicum.sleeptracker;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -58,10 +59,20 @@ public class UserClassification implements Function<List<SleepingSession>, Sleep
 	}
 
 	private boolean isSova(SleepingSession session) {
-		return session.startTime.getHour() > 9 && session.finishTime.getHour() > 23;
+		LocalDateTime start = session.startTime;
+		LocalDateTime end = session.finishTime;
+		// Проверяем, что начало сна после 23:00 и конец сна на следующий день после 9:00
+		return (start.getHour() > 23 || (start.getHour() == 23 && start.getMinute() > 0)) &&
+				!start.toLocalDate().equals(end.toLocalDate()) &&
+				(end.getHour() > 9 || (end.getHour() == 9 && end.getMinute() > 0));
 	}
 
 	private boolean isJavoronok(SleepingSession session) {
-		return session.startTime.getHour() < 7 && session.finishTime.getHour() < 22;
+		LocalDateTime start = session.startTime;
+		LocalDateTime end = session.finishTime;
+		// Проверяем, что начало сна до 22:00 и конец сна до 7:00 следующего дня
+		return (start.getHour() < 22 || (start.getHour() == 22 && start.getMinute() == 0)) &&
+				!start.toLocalDate().equals(end.toLocalDate()) &&
+				(end.getHour() < 7 || (end.getHour() == 7 && end.getMinute() == 0));
 	}
 }
