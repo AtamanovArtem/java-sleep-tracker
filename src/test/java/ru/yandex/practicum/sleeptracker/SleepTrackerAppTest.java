@@ -234,7 +234,7 @@ public class SleepTrackerAppTest {
 	}
 
 	@Test
-	public void userClassificationTestGolub() { 
+	public void userClassificationTestGolub() {
 		List<SleepingSession> sleepingSessions = new ArrayList<>();
 		sleepingSessions.add(new SleepingSession(LocalDateTime.of(2025, 10, 1, 21, 59),
 				LocalDateTime.of(2025, 10, 2, 6, 59), SleepQuality.GOOD));//Javoronok
