@@ -4,9 +4,9 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class SleepingSession {
-	LocalDateTime startTime;
-	LocalDateTime finishTime;
-	SleepQuality qualityOfSleep;
+	protected LocalDateTime startTime;
+	protected LocalDateTime finishTime;
+	protected SleepQuality qualityOfSleep;
 
 	protected SleepingSession(LocalDateTime startTime, LocalDateTime finishTime, SleepQuality qualityOfSleep) {
 		this.startTime = startTime;

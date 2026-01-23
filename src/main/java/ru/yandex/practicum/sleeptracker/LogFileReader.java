@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogFileReader {
-	public String fileName;
+	private String fileName;
 
 
 	protected LogFileReader(String fileName) {
